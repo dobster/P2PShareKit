@@ -1,35 +1,43 @@
 # P2PShareKit
 
-Peer-to-peer sharing using Network.framework, all wrapped up in a handy Swift package!
+![Swift Version](https://img.shields.io/badge/Swift-5.1-orange.svg?logo=swift)
+![Platforms](https://img.shields.io/badge/Platforms-iOS-yellow.svg?logo=apple)
+
+Peer-to-peer sharing using the modern Network.framework, all wrapped up in a handy Swift package.
 
 Securely share data between iOS devices using peer wifi networking (no wifi routers or any established network required)
 
-Builds upon sample code provided as part of [WWDC2019 - Advances in Networking Part 2][wwdc-2019-advanced-networking]
+Builds upon sample code provided during [WWDC2019 - Advances in Networking Part 2][wwdc-2019-advanced-networking]
 
 This implementation is currently limited to:
 - iOS 13
 - exclusively uses peer-to-peer wifi
 
-## Sample app
+## Demo
 
-Checkout the example folder for a demo.
+// TODO
 
 ## Usage
 
+Each device needs to identify itself to others. Build your own identify dictionary based on what makes sense for your app. The `PeerInfo` record is exchanged before the framework reports a new connection.
+
 ```swift
-
-// Each device needs to identify itself to others.
-// Build your own id dictionary based on what makes sense for your app.
 let peerInfo = PeerInfo(info: ["name": "Fred"])
+```
 
-// Create a configuration around your security credentials.
-let config = MultipeerSessionConfig(myPeerInfo: peerInfo, bonjourService: "_demo._tcp", presharedKey: "1234", identity: "Demo")
+Configure a session with your security credentials. Connections are only made with other devices with the same security credentials. Traffic is secured with TLS 1.2.
+```swift
+let config = MultipeerSessionConfig(myPeerInfo: peerInfo, 
+                                    bonjourService: "_demo._tcp", 
+                                    presharedKey: "1234", 
+                                    identity: "Demo")
 
-// Create a session.
 let session = MultipeerSession(config: config)
+```
 
-// Set the session callbacks.
+Finally, set the session callbacks and start the session.
 
+```swift
 session.peersChangeHandler = { peerInfos in 
      // update any UI that shows connected peers
  }
@@ -43,8 +51,11 @@ session.messageReceivedHandler = { peerInfo, data in
 }
 
 session.startSharing()
+```
 
-// To send a message, use the peerID from the list of peers returned in peersChangeHandler.
+To send a message, use the peerID from the list of peers returned in `peersChangeHandler`.
+
+```swift
 let peerID = peerInfo.peerID
 session.send(to: peerID, data: data)
 ```
@@ -63,6 +74,14 @@ Add the depedency in your Swift package file:
         .package(url: "https://github.com/dobster/P2PShareKit", from: "0.1.0")
     ],
 ```
+
+## Contributing
+
+Feel free to open [issues on GitHub](https://github.com/dobster/P2PShareKit/issues) or to open [pull requests](https://github.com/dobster/P2PShareKit/pulls).
+
+## License
+
+This project is licensed unter the terms of the MIT license. See [LICENSE](./LICENSE) for more information.
 
 
 [multipeer-connectivity]: https://developer.apple.com/documentation/multipeerconnectivity
