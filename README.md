@@ -94,4 +94,4 @@ This project is licensed unter the terms of the MIT license. See [LICENSE](./LIC
 [multipeer-connectivity]: https://developer.apple.com/documentation/multipeerconnectivity
 [wwdc-2019-advanced-networking]: https://developer.apple.com/videos/play/wwdc2019/713/
 [network-framework]: https://developer.apple.com/documentation/network
-[blog-post]: http://127.0.0.1:4000/ios/ipados/ipad/network.framework/2020/02/08/peer-to-peer-sharing-ios.html
+[blog-post]: https://dobster.github.io/ios/ipados/ipad/network.framework/2020/02/08/peer-to-peer-sharing-ios.html
