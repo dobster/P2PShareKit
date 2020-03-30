@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "P2PShare",
+        "repositoryURL": "https://github.com/dobster/P2PShareKit",
+        "state": {
+          "branch": null,
+          "revision": "525a685f6963fd757a8cb0912589672a948359a5",
+          "version": "0.1.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -7,6 +7,11 @@ Peer-to-peer sharing using the modern Network.framework, all wrapped up in a han
 
 Securely share data between iOS devices using peer wifi networking (no wifi routers or any established network required)
 
+- Automatically connect to trusted peers
+- Comms via TLS 1.2
+- Simple `Data` sharing
+- Automatically re-establish connections to lost peers
+
 Builds upon sample code provided during [WWDC2019 - Advances in Networking Part 2][wwdc-2019-advanced-networking]
 
 This implementation is currently limited to:
@@ -14,6 +19,8 @@ This implementation is currently limited to:
 - exclusively uses peer-to-peer wifi
 
 ## Demo
+
+Refer to the Example project
 
 ![Sample](Example/demo.gif?raw=true)
 
@@ -25,7 +32,7 @@ Each device needs to identify itself to others. Build your own identify dictiona
 let peerInfo = PeerInfo(info: ["name": "Fred"])
 ```
 
-Configure a session with your security credentials. Connections are only made with other devices with the same security credentials. Traffic is secured with TLS 1.2.
+Configure a session with your security credentials. Connections are only made with other devices with the same security credentials. 
 ```swift
 let config = MultipeerSessionConfig(myPeerInfo: peerInfo, 
                                     bonjourService: "_demo._tcp", 
