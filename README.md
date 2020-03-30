@@ -15,7 +15,7 @@ This implementation is currently limited to:
 
 ## Demo
 
-// TODO
+![Sample](Example/demo.gif?raw=true)
 
 ## Usage
 
