@@ -78,7 +78,7 @@ Add the depedency in your Swift package file:
 
 ```swift
     dependencies: [
-        .package(url: "https://github.com/dobster/P2PShareKit", from: "0.1.1")
+        .package(url: "https://github.com/dobster/P2PShareKit", from: "0.2.0")
     ],
 ```
 
