@@ -26,6 +26,8 @@ Refer to the Example project
 
 ## Usage
 
+Make sure you have added [NSLocalNetworkUsageDescription][local-network-usage-description] and [NSBonjourServices][bonjour-services] to your Info.plist 
+
 Each device needs to identify itself to others. Build your own identify dictionary based on what makes sense for your app. The `PeerInfo` record is exchanged before the framework reports a new connection.
 
 ```swift
@@ -95,3 +97,5 @@ This project is licensed unter the terms of the MIT license. See [LICENSE](./LIC
 [wwdc-2019-advanced-networking]: https://developer.apple.com/videos/play/wwdc2019/713/
 [network-framework]: https://developer.apple.com/documentation/network
 [blog-post]: https://dobster.github.io/ios/ipados/ipad/network.framework/2020/02/08/peer-to-peer-sharing-ios.html
+[local-network-usage-description]: https://developer.apple.com/documentation/bundleresources/information_property_list/nslocalnetworkusagedescription
+[bonjour-services]: https://developer.apple.com/documentation/bundleresources/information_property_list/nsbonjourservices 
