@@ -15,7 +15,7 @@ Securely share data between iOS devices using peer wifi networking (no wifi rout
 Builds upon sample code provided during [WWDC2019 - Advances in Networking Part 2][wwdc-2019-advanced-networking]
 
 This implementation is currently limited to:
-- iOS 13
+- iOS 13 or later
 - exclusively uses peer-to-peer wifi
 
 ## Demo
